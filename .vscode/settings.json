@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "type_traits": "c",
+        "freememory.h": "c",
+        "node.h": "c"
+    }
+}

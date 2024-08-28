@@ -1,0 +1,15 @@
+{
+    "name": "Maz Generator",
+    "dockerComposeFile": [
+      "docker-compose.yml"
+    ],
+    "service": "maze-generator",
+    "workspaceFolder": "/app",
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+      "ms-vscode.cpptools"
+    ]
+}
+  
