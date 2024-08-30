@@ -11,7 +11,8 @@
 typedef struct Cell {
     int x, y;               // Coordinates of the cell in the maze
     int walls;              // Bit field to represent walls (top, right, bottom, left)
-    struct Cell *next;      // Pointer to the next cell (optional for other data structure needs)
+    struct Cell* next;      // Pointer to the next cell (optional for other data structure needs)
+    bool visited;
 } Cell;
 
 bool isTop(struct Cell* cell);

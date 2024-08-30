@@ -5,7 +5,7 @@ struct Cell* generateCells(int width, int height) {
     struct Cell* head = NULL; 
     for(int y = 0; y < height; y++) {
         for(int x = 0; x < width; x++) {
-            head = appendByCell(head, createCell(x, y, WALL_TOP));
+            head = appendByCell(head, createCell(x, y, WALL_TOP | WALL_BOTTOM | WALL_LEFT | WALL_RIGHT));
         }
     }
     return head;
