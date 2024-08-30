@@ -10,15 +10,9 @@
 
 int main(void) 
 {
-    const int x = 6;
-    const int y = 6;
+    const int x = 7;
+    const int y = 7;
     struct Cell* head = generateCells(x, y);
-
-    // struct Cell* head = createCell(0, 0, WALL_TOP | WALL_LEFT); // Top-left corner cell with top and left walls
-    // head->next = createCell(1, 0, WALL_TOP | WALL_RIGHT); // Top-right corner cell with top and right walls
-
-    // head->next->next = createCell(0, 1, WALL_BOTTOM | WALL_LEFT); // Bottom-left corner cell with bottom and left walls
-    // head->next->next->next = createCell(1, 1, WALL_BOTTOM | WALL_RIGHT); // Bottom-right corner cell with bottom and right wallss
 
     generateMaze(NULL, head, head);
 

@@ -14,7 +14,7 @@ struct Node* projectTopRowCell(Cell* cell) {
         node = appendByChar(node, HORIZONTAL_LINE, HORIZONTAL_LINE);
     }
     if (!isLeft(cell) && !isTop(cell)) {
-        node = appendByChar(node, ' ', ' ');
+        node = appendByChar(node, BOTTOM_RIGHT_CORNER, ' ');
     }
     if (isRight(cell) && isTop(cell)) {
         node = appendByChar(node, HORIZONTAL_LINE, TOP_RIGHT_CORNER);
@@ -26,7 +26,7 @@ struct Node* projectTopRowCell(Cell* cell) {
         node = appendByChar(node, HORIZONTAL_LINE, HORIZONTAL_LINE);
     }
     if (!isRight(cell) && !isTop(cell)) {
-        node = appendByChar(node, ' ', ' ');
+        node = appendByChar(node, ' ', BOTTOM_LEFT_CORNER);
     }
     return node;
 }
@@ -43,7 +43,7 @@ struct Node* projectBottomRowCell(Cell* cell) {
         node = appendByChar(node, HORIZONTAL_LINE, HORIZONTAL_LINE);
     }
     if (!isLeft(cell) && !isBottom(cell)) {
-        node = appendByChar(node, ' ', ' ');
+        node = appendByChar(node, TOP_RIGHT_CORNER, ' ');
     }
     if (isRight(cell) && isBottom(cell)) {
         node = appendByChar(node, HORIZONTAL_LINE, BOTTOM_RIGHT_CORNER);
@@ -55,7 +55,7 @@ struct Node* projectBottomRowCell(Cell* cell) {
         node = appendByChar(node, HORIZONTAL_LINE, HORIZONTAL_LINE);
     }
     if (!isRight(cell) && !isBottom(cell)) {
-        node = appendByChar(node, ' ', ' ');
+        node = appendByChar(node, ' ', TOP_LEFT_CORNER);
     }
     return node;
 }
