@@ -7,6 +7,7 @@
 #include "node.h"
 #include "generateCells.h"
 #include "generateMaze.h"
+#include "logging.h" 
 
 int main(void) 
 {
@@ -14,7 +15,11 @@ int main(void)
     const int y = 7;
     struct Cell* head = generateCells(x, y);
 
+    LOG_INFO("Maze generation started");
+
     generateMaze(NULL, head, head);
+
+    LOG_INFO("Maze projection started");
 
     struct Node* current = projectMaze(head);
 
@@ -26,8 +31,12 @@ int main(void)
     }
     printf("\n");
 
+    LOG_INFO("Free memory started");
+
     freeMemoryCell(head);
     freeMemoryNode(current);
+
+    LOG_INFO("Maze generation completed successfully");
 
     return 0;
 }

@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "cell.h"
+#include <time.h>
 #include "cell.h"
 #include "freeMemory.h"
 
@@ -27,16 +27,15 @@ Cell** shuffle(Cell* current, Cell* head) {
     neighbors[1] = left;
     neighbors[2] = right;
     neighbors[3] = bottom;
-
     for (int i = 3; i > 0; --i) {
-        int j = rand() % (i + 1);
+        int j = rand() / (RAND_MAX / (i + 1));
         Cell* temp = neighbors[i];
         neighbors[i] = neighbors[j];
         neighbors[j] = temp;
     }
 
     Cell** shuffled_neighbors = (Cell**)malloc(4 * sizeof(Cell*));
-    for (int i = 0; i < 4; ++i) {
+    for (int i = 0; i < 4; i++) {
         shuffled_neighbors[i] = neighbors[i];
     }
 
@@ -63,6 +62,9 @@ void carveEdge(Cell* last, Cell* next) {
 }
 
 void generateMaze(Cell* last, Cell* next, Cell* head) {
+    if (last == NULL) {
+        srand(time(NULL));
+    }
     if (next->visited == true) {
         return;
     }
